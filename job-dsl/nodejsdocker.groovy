@@ -13,9 +13,7 @@ job('NodeJS Docker example') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
-        installDependencies{
-            shell("npm install")
-        }
+        shell("npm install")
         dockerBuildAndPublish {
             repositoryName('mojtabasfrz/docker-nodejs-demo')
             tag('${GIT_REVISION,length=9}')
